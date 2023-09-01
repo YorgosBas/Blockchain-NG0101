@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "type": "admin",
+      "candidacy": false,
+      "ether": 1000,
+      "votedFor": null,
+      "votesReceived": 0,
+      "pledgedEther": 0,
+      "measure": 0,
+      "userAddress": "0x826348674A6D78ebdC2933D384Dd06C7109b1A65"
+    }
+  ]
+}
