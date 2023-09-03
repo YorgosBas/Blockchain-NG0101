@@ -5,12 +5,36 @@
       "password": "admin",
       "type": "admin",
       "candidacy": false,
-      "ether": 1000,
+      "ether": 1125,
       "votedFor": null,
       "votesReceived": 0,
       "pledgedEther": 0,
       "measure": 0,
-      "userAddress": "0x826348674A6D78ebdC2933D384Dd06C7109b1A65"
+      "userAddress": "0xD4fd399DD0Ed7D6b3Bb77f8C36fD7ba4B8Ac487c"
+    },
+    {
+      "username": "user3",
+      "password": "user3",
+      "type": "normal",
+      "candidacy": true,
+      "ether": 399.999493064,
+      "votedFor": "user4",
+      "votesReceived": 1,
+      "pledgedEther": 75,
+      "measure": 75,
+      "userAddress": "0x069BB121745cCCE325254d5064FD591d0677215a"
+    },
+    {
+      "username": "user4",
+      "password": "user4",
+      "type": "normal",
+      "candidacy": true,
+      "ether": 874.999830472,
+      "votedFor": "user3",
+      "votesReceived": 1,
+      "pledgedEther": 50,
+      "measure": 50,
+      "userAddress": "0x2f3e7754e5F8D1286D1E64425273DB5e7d71F77B"
     }
   ]
 }

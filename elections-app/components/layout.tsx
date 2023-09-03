@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import { useUser } from '../contexts/userContext';
 import { useRouter } from 'next/router';
 import socket from '../clientSocket';
+import useCandidatesCount from '../hooks/useCandidateCount';
 
 // Define the types for the Layout component's props
 type LayoutProps = {
@@ -15,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
   const { user, setUser, adminAddress, logout, etherBalance } = useUser();
   const router = useRouter();
   const [forceUpdateKey, setForceUpdateKey] = useState(0);
+  const numberOfCandidates = useCandidatesCount(socket);
   //const [etherBalance, setEtherBalance] = useState<number | null>(null);
 
   // Determine the current stage based on the router's pathname
@@ -67,7 +69,14 @@ export default function Layout({ children }: LayoutProps) {
   // Function to handle moving to the next stage
   const handleNextStage = () => {
     const currentStage = router.pathname;
-    socket.emit('changeStage', currentStage);
+    console.log('currentStage', currentStage);
+    if (numberOfCandidates === 1 && currentStage === '/declareCandidacy') {
+      router.push('/results');
+      socket.emit('changeStage', '/vote');
+      return;
+    } else {
+      socket.emit('changeStage', currentStage);
+    }
   };
 
   return (

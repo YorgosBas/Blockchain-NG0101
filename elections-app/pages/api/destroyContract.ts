@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { web3, electionContract } from '../../web3Config';
 
-const ownerPrivateKey = '0x2fcf329dec56f23cfe59e93f22ee88d32f92abc13362e1592858686c13299dc9';
+const ownerPrivateKey = '0x20ea317be40d117d5e423253c59524fefb9a472db8a525de96019eafb297368b';
 const ownerAccount = web3.eth.accounts.privateKeyToAccount(ownerPrivateKey);
 web3.eth.accounts.wallet.add(ownerAccount);
 web3.eth.defaultAccount = ownerAccount.address;

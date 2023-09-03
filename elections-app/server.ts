@@ -226,7 +226,7 @@ app.prepare().then(() => {
                 return;
             }
 
-            if (candidate.pledgedEther <= candidate.measure) {
+            if (candidate.pledgedEther < candidate.measure) {
                 socket.emit('voteResponse', { success: false, message: 'No more ether to reward' });
                 return;
             }
